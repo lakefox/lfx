@@ -1,13 +1,3 @@
-:root {
-  --background: #eaeaea;
-  --text-color: #000000;
-  --paragraph-color: #424242;
-  --font-family: Verdana, Geneva, sans-serif;
-  --font-size: 14px;
-  --header-background: #fe5c7f;
-  --header-color: #ffffff;
-}
-
 body {
   background: var(--background);
   color: var(--text-color);
@@ -89,4 +79,7 @@ p {
 }
 ul {
   list-style-type: none;
+}
+textarea {
+  max-width: 90%;
 }

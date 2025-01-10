@@ -1,0 +1,113 @@
+<style>
+  {{if eq .Theme "Serenity Blue"}}
+  :root {
+    --background: #d7e8f7;
+    --text-color: #1e3a5f;
+    --paragraph-color: #334e68;
+    --font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    --font-size: 14px;
+    --header-background: #3b82f6;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Sunset Glow"}}
+  :root {
+    --background: #ffe8d6;
+    --text-color: #4a2f27;
+    --paragraph-color: #6b3e31;
+    --font-family: "Georgia", serif;
+    --font-size: 16px;
+    --header-background: #ff7f50;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Forest Whisper"}}
+  :root {
+    --background: #f0f4ec;
+    --text-color: #2c4228;
+    --paragraph-color: #486d4d;
+    --font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --font-size: 15px;
+    --header-background: #2f855a;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Monochrome Minimalist"}}
+  :root {
+    --background: #f7f7f7;
+    --text-color: #333333;
+    --paragraph-color: #555555;
+    --font-family: Arial, Helvetica, sans-serif;
+    --font-size: 14px;
+    --header-background: #444444;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Vibrant Energy"}}
+  :root {
+    --background: #fcf6bd;
+    --text-color: #1b1b1b;
+    --paragraph-color: #3a3a3a;
+    --font-family: "Courier New", Courier, monospace;
+    --font-size: 14px;
+    --header-background: #ff4e50;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Autumn Harvest"}}
+  :root {
+    --background: #fff5e1;
+    --text-color: #4a2712;
+    --paragraph-color: #724c2b;
+    --font-family: "Times New Roman", Times, serif;
+    --font-size: 16px;
+    --header-background: #d97706;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Ocean Breeze"}}
+  :root {
+    --background: #d4f1f9;
+    --text-color: #083759;
+    --paragraph-color: #1d5d77;
+    --font-family: "Trebuchet MS", Helvetica, sans-serif;
+    --font-size: 14px;
+    --header-background: #0288d1;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Midnight Elegance"}}
+  :root {
+    --background: #1e1e2f;
+    --text-color: #e0e0e0;
+    --paragraph-color: #a5a5a5;
+    --font-family: "Helvetica Neue", Helvetica, sans-serif;
+    --font-size: 15px;
+    --header-background: #37364d;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Lavender Bliss"}}
+  :root {
+    --background: #f4e1f0;
+    --text-color: #3d194f;
+    --paragraph-color: #6e2968;
+    --font-family: "Garamond", "Georgia", serif;
+    --font-size: 15px;
+    --header-background: #8e44ad;
+    --header-color: #ffffff;
+  }
+  {{else if eq .Theme "Amber Sunrise"}}
+  :root {
+    --background: #fff7e1;
+    --text-color: #7a4e1d;
+    --paragraph-color: #9c6e31;
+    --font-family: "Lucida Bright", Georgia, serif;
+    --font-size: 14px;
+    --header-background: #ffa726;
+    --header-color: #ffffff;
+  }
+  {{else}}
+  :root {
+    --background: #eaeaea;
+    --text-color: #000000;
+    --paragraph-color: #424242;
+    --font-family: Verdana, Geneva, sans-serif;
+    --font-size: 14px;
+    --header-background: #fe5c7f;
+    --header-color: #ffffff;
+  }
+  {{end}}
+</style>

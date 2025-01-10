@@ -11,11 +11,12 @@ DATABASE="./forum.db"
 JWT_SECRET="your_secret"
 SITE_TITLE="Your Forum Name"
 POSTS_PER_PAGE="20"
+THEME="Sunset Glow"
 ```
 
-Set your favicon by adding a `favicon.webp` file to the static folder.
+To set a custom favicon replace the `favicon.webp` file in the static folder and rebuild the application.
 
-Change the look of the forum by modifing the CSS variables in `/static/styles.css`.
+All of the server files are embeded into the application so you can directly copy the binary to the server you plan on running on.
 
 ## Running LFX
 
@@ -24,3 +25,16 @@ cd ./lfx
 go build main.go
 ./main
 ```
+
+## Themes
+
+Serenity Blue
+Sunset Glow
+Forest Whisper
+Monochrome Minimalist
+Vibrant Energy
+Autumn Harvest
+Ocean Breeze
+Midnight Elegance
+Lavender Bliss
+Amber Sunrise
