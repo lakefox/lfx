@@ -10,6 +10,7 @@ Make a .env file with the following contents:
 DATABASE="./forum.db"
 JWT_SECRET="your_secret"
 SITE_TITLE="Your Forum Name"
+POSTS_PER_PAGE="20"
 ```
 
 Set your favicon by adding a `favicon.webp` file to the static folder.
