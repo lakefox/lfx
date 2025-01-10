@@ -20,7 +20,7 @@
 <ul>
   {{ range .Comments }}
   <li>
-    <p><strong>{{ .Username }}</strong> on {{ .Timestamp }}</p>
+    <p><strong>{{ .Username }}</strong> on {{ formatTimestamp .Timestamp }}</p>
     <p>{{ .Content }}</p>
   </li>
   {{ end }}
