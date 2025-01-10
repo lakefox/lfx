@@ -28,13 +28,13 @@ go build main.go
 
 ## Themes
 
-Serenity Blue
-Sunset Glow
-Forest Whisper
-Monochrome Minimalist
-Vibrant Energy
-Autumn Harvest
-Ocean Breeze
-Midnight Elegance
-Lavender Bliss
-Amber Sunrise
+- Serenity Blue
+- Sunset Glow
+- Forest Whisper
+- Monochrome Minimalist
+- Vibrant Energy
+- Autumn Harvest
+- Ocean Breeze
+- Midnight Elegance
+- Lavender Bliss
+- Amber Sunrise
