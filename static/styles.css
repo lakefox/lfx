@@ -1,0 +1,64 @@
+:root {
+  --background: #eaeaea;
+  --text-color: #000000;
+  --font-family: Verdana, Geneva, sans-serif;
+  --font-size: 14px;
+  --header-background: #fe5c7f;
+  --header-color: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background: var(--header-background);
+  color: var(--header-color);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header a {
+  color: var(--header-color);
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+#content {
+  margin: 20px;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.title {
+  display: flex;
+  margin-bottom: 5px;
+}
+.title-text {
+  font-size: 10pt;
+  color: var(--text-color);
+  text-decoration: none;
+}
+.left-pad {
+  margin-left: 10px;
+}
+.details {
+  font-size: 7pt;
+}
+.votearrow {
+  width: 10px;
+  height: 10px;
+  border: 0px;
+  margin: 3px 2px 6px;
+  background: url(triangle.svg),
+    linear-gradient(transparent, transparent) no-repeat;
+  background-size: 10px;
+}

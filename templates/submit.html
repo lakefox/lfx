@@ -1,0 +1,17 @@
+<h1>Submit a Post</h1>
+<form method="POST">
+  <input type="hidden" name="username" value="{{ .Username }}" />
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required />
+  <br />
+  <br />
+  <label for="url">URL:</label>
+  <input type="url" id="url" name="url" required />
+  <br />
+  <br />
+  <label for="text">Text:</label>
+  <textarea id="text" name="text" rows="4" cols="50"></textarea>
+  <br />
+  <br />
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="shortcut icon" href="/static/favicon.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="header">
+      <div>
+        <a href="/">Home</a>
+        <a href="/submit">Submit</a>
+        <a href="/profile?user={{.Username}}">{{ .Username }}</a>
+      </div>
+      <div>
+        {{if .Username}}
+        <a href="/logout">Logout</a>
+        {{else}}
+        <a href="/login">Login</a>
+        {{end}}
+      </div>
+    </div>
+    <div id="content">{{ .Content | safeHTML }}</div>
+  </body>
+</html>

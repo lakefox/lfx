@@ -1,0 +1,27 @@
+<a class="title-text" href="{{ .Post.URL }}" target="_blank"
+  >{{ .Post.Title }}</a
+>
+<p>
+  Posted by
+  <a href="/profile?user={{ .Post.Username }}">{{ .Post.Username }}</a> on {{
+  .Post.Timestamp }}
+</p>
+
+{{if .Post.Text}}
+<p>{{.Post.Text}}</p>
+{{end}}
+
+<h3>Add a Comment</h3>
+<form method="POST">
+  <textarea name="content" rows="4" cols="50" required></textarea><br />
+  <button type="submit">Add Comment</button>
+</form>
+
+<ul>
+  {{ range .Comments }}
+  <li>
+    <p><strong>{{ .Username }}</strong> on {{ .Timestamp }}</p>
+    <p>{{ .Content }}</p>
+  </li>
+  {{ end }}
+</ul>

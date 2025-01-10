@@ -1,0 +1,4 @@
+/.env
+/forum.db
+/main.go
+/static/favicon.webp

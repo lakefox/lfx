@@ -1,0 +1,21 @@
+{{ if . }}
+<ul>
+  {{ range . }}
+  <li class="post">
+    <div class="title">
+      <span
+        ><a href="/vote?id={{ .ID }}"><div class="votearrow"></div></a>
+      </span>
+      <a class="title-text left-pad" href="{{ .URL }}">{{ .Title }}</a>
+    </div>
+    <div class="details">
+      {{ .Score }} points |
+      <a href="/profile?user={{ .Username }}">by {{ .Username }}</a> |
+      <a href="/post?id={{ .ID }}">comments</a>
+    </div>
+  </li>
+  {{ end }}
+</ul>
+{{ else }}
+<p>No posts yet. <a href="/submit">Make a post</a>.</p>
+{{ end }}
