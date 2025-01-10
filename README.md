@@ -16,7 +16,7 @@ THEME="Sunset Glow"
 
 To set a custom favicon replace the `favicon.webp` file in the static folder and rebuild the application.
 
-All of the server files are embeded into the application so you can directly copy the binary to the server you plan on running on.
+All of the server files are embedded into the application so you can directly copy the binary to the server you plan on running on.
 
 ## Running LFX
 

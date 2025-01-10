@@ -83,3 +83,7 @@ ul {
 textarea {
   max-width: 90%;
 }
+label {
+  min-width: 50px;
+  display: inline-block;
+}
