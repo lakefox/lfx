@@ -68,6 +68,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+  margin-bottom: 100px;
 }
 
 .pagination * {
@@ -75,4 +76,7 @@ body {
   padding: 10px 15px;
   color: #333;
   font-weight: bold;
+}
+.content {
+  min-height: 70vh;
 }
