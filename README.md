@@ -4,7 +4,7 @@ Simple Hacker News like forum using Sqlite.
 
 ## Setup
 
-Make a .env file with the following contents:
+Make a `.env` file with the following contents:
 
 ```sh
 DATABASE="./forum.db"
@@ -20,10 +20,28 @@ All of the server files are embeded into the application so you can directly cop
 
 ## Running LFX
 
-```go
+### Your system
+
+```sh
+git clone https://github.com/lakefox/lfx.git
 cd ./lfx
-go build main.go
-./main
+go build -o lfx
+nano .env
+./lfx
+```
+
+### Linux
+
+```sh
+# Build the application for the target
+GOOS=linux GOARCH=amd64 go build -o lfx
+# Transfer the application
+scp ./lfx root@your.ip.add.ress:/
+
+ssh root@your.ip.add.ress
+nano .env
+cd /
+./lfx
 ```
 
 ## Themes
