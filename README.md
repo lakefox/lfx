@@ -1,6 +1,6 @@
 # LFX Forum Software
 
-Simple Hacker News like forums using Sqlite.
+Simple Hacker News like forum using Sqlite.
 
 ## Setup
 
