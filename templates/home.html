@@ -1,6 +1,6 @@
 {{ if . }}
 <ul>
-  {{ range . }}
+  {{ range .Posts }}
   <li class="post">
     <div class="title">
       <span
@@ -19,3 +19,15 @@
 {{ else }}
 <p>No posts yet. <a href="/submit">Make a post</a>.</p>
 {{ end }}
+
+<div class="pagination">
+  {{ if .HasPrevPage }}
+  <a href="/?page={{ sub .CurrentPage 1 }}">Previous</a>
+  {{ end }}
+
+  <span>Page {{ .CurrentPage }}</span>
+
+  {{ if .HasNextPage }}
+  <a href="/?page={{ add .CurrentPage 1 }}">Next</a>
+  {{ end }}
+</div>

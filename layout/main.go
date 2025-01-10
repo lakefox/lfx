@@ -7,10 +7,15 @@ import (
 	"net/http"
 )
 
+func add(a, b int) int { return a + b }
+func sub(a, b int) int { return a - b }
+
 var templates = template.Must(template.New("").Funcs(template.FuncMap{
 	"safeHTML": func(s string) template.HTML {
 		return template.HTML(s)
 	},
+	"add": add,
+	"sub": sub,
 }).ParseFiles(
 	"templates/layout.html",
 	"templates/home.html",

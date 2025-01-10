@@ -62,3 +62,17 @@ body {
     linear-gradient(transparent, transparent) no-repeat;
   background-size: 10px;
 }
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination * {
+  margin: 0 10px;
+  padding: 10px 15px;
+  color: #333;
+  font-weight: bold;
+}
