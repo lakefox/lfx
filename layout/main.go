@@ -5,17 +5,22 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"time"
 )
 
 func add(a, b int) int { return a + b }
 func sub(a, b int) int { return a - b }
+func formatTimestamp(t time.Time) string {
+	return t.Format("Jan 2, 2006 at 3:04pm")
+}
 
 var templates = template.Must(template.New("").Funcs(template.FuncMap{
 	"safeHTML": func(s string) template.HTML {
 		return template.HTML(s)
 	},
-	"add": add,
-	"sub": sub,
+	"add":             add,
+	"sub":             sub,
+	"formatTimestamp": formatTimestamp,
 }).ParseFiles(
 	"templates/layout.html",
 	"templates/home.html",

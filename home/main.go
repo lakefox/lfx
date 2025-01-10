@@ -49,6 +49,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
+		if post.URL == "" {
+			post.URL = "/post?id=" + strconv.Itoa(post.ID)
+		}
 		posts = append(posts, post)
 	}
 

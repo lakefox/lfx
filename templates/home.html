@@ -11,7 +11,7 @@
     <div class="details">
       {{ .Score }} points |
       <a href="/profile?user={{ .Username }}">by {{ .Username }}</a> |
-      <a href="/post?id={{ .ID }}">comments</a>
+      <a href="/post?id={{ .ID }}">comments</a> | {{formatTimestamp .Timestamp}}
     </div>
   </li>
   {{ end }}
