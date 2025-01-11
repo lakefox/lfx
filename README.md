@@ -56,3 +56,7 @@ cd /
 - Midnight Elegance
 - Lavender Bliss
 - Amber Sunrise
+
+## Spam filtering
+
+By default all post/comments/usernames that contain words in [Google's Profanity Words List](https://github.com/coffee-and-fun/google-profanity-words/blob/main/data/en.txt) will be rejected.

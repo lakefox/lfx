@@ -2,6 +2,7 @@ package post
 
 import (
 	"lfx/db"
+	"lfx/spam"
 
 	"lfx/auth"
 	"lfx/layout"
@@ -60,6 +61,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		content := r.FormValue("content")
+
+		if spam.ContainsBannedWord(content) {
+			http.Redirect(w, r, "/contentpolicy", http.StatusFound)
+			return
+		}
 
 		_, err = database.Exec("INSERT INTO comments (post_id, username, content) VALUES (?, ?, ?)", postID, username, content)
 		if err != nil {

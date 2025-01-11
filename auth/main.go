@@ -1,8 +1,10 @@
 package auth
 
 import (
+	"fmt"
 	"lfx/db"
 	"lfx/layout"
+	"lfx/spam"
 	"log"
 	"net/http"
 	"time"
@@ -56,6 +58,11 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		username := r.FormValue("username")
 		password := r.FormValue("password")
+
+		if spam.ContainsBannedWord(username) {
+			http.Redirect(w, r, "/contentpolicy", http.StatusFound)
+			return
+		}
 
 		// Fetch the user from the database
 		var hashedPassword string
@@ -116,6 +123,12 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		username := r.FormValue("username")
 		password := r.FormValue("password")
+		fmt.Append([]byte(username))
+		fmt.Println("here")
+		if spam.ContainsBannedWord(username) {
+			http.Redirect(w, r, "/contentpolicy", http.StatusFound)
+			return
+		}
 
 		// Hash the password
 		hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)

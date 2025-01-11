@@ -4,6 +4,7 @@ import (
 	"lfx/auth"
 	"lfx/db"
 	"lfx/layout"
+	"lfx/spam"
 	"log"
 	"net/http"
 )
@@ -21,6 +22,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		title := r.FormValue("title")
 		url := r.FormValue("url")
 		text := r.FormValue("text")
+
+		if spam.ContainsBannedWord(title) || spam.ContainsBannedWord(text) {
+			http.Redirect(w, r, "/contentpolicy", http.StatusFound)
+			return
+		}
 
 		_, err := database.Exec("INSERT INTO posts (title, url, text, username) VALUES (?, ?, ?, ?)", title, url, text, username)
 		if err != nil {
