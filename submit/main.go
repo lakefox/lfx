@@ -3,6 +3,7 @@ package submit
 import (
 	"lfx/auth"
 	"lfx/db"
+	"lfx/ipban"
 	"lfx/layout"
 	"lfx/spam"
 	"log"
@@ -24,6 +25,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		text := r.FormValue("text")
 
 		if spam.ContainsBannedWord(title) || spam.ContainsBannedWord(text) {
+			ipban.Ban(ipban.GetIP(r))
 			http.Redirect(w, r, "/contentpolicy", http.StatusFound)
 			return
 		}

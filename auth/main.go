@@ -1,8 +1,8 @@
 package auth
 
 import (
-	"fmt"
 	"lfx/db"
+	"lfx/ipban"
 	"lfx/layout"
 	"lfx/spam"
 	"log"
@@ -123,9 +123,9 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		username := r.FormValue("username")
 		password := r.FormValue("password")
-		fmt.Append([]byte(username))
-		fmt.Println("here")
+
 		if spam.ContainsBannedWord(username) {
+			ipban.Ban(ipban.GetIP(r))
 			http.Redirect(w, r, "/contentpolicy", http.StatusFound)
 			return
 		}
