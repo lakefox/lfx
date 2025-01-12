@@ -4,6 +4,9 @@ import (
 	"embed"
 	"regexp"
 	"strings"
+	"unicode"
+
+	"golang.org/x/text/unicode/norm"
 )
 
 //go:embed word_list.txt
@@ -33,6 +36,10 @@ func Init() {
 
 // ContainsBannedWord checks if the given text contains any banned words.
 func ContainsBannedWord(text string) bool {
+	// Norm text to prent hiding
+	text = norm.NFKC.String(text)
+	text = removeDiacritics(text)
+	text = normalizeString(text)
 	for _, word := range wf {
 		pattern := `(?i)` + regexp.QuoteMeta(word)
 		matched, err := regexp.MatchString(pattern, text)
@@ -44,4 +51,28 @@ func ContainsBannedWord(text string) bool {
 		}
 	}
 	return false
+}
+
+// isNonSpacingMark identifies Unicode non-spacing marks (diacritics).
+func isNonSpacingMark(r rune) bool {
+	return unicode.Is(unicode.Mn, r) // Mn: Nonspacing_Mark
+}
+
+func removeDiacritics(input string) string {
+	// Normalize to NFD (Normalization Form Decomposed).
+	decomposed := norm.NFD.String(input)
+
+	// Filter out non-spacing marks.
+	result := make([]rune, 0, len(decomposed))
+	for _, r := range decomposed {
+		if !isNonSpacingMark(r) {
+			result = append(result, r)
+		}
+	}
+
+	return string(result)
+}
+func normalizeString(input string) string {
+	// Remove spaces and convert to lowercase
+	return strings.ReplaceAll(strings.ToLower(input), " ", "")
 }

@@ -20,7 +20,12 @@
 <ul>
   {{ range .Comments }}
   <li>
-    <p><strong>{{ .Username }}</strong> on {{ formatTimestamp .Timestamp }}</p>
+    <p>
+      <a href="/profile?user={{ .Username }}"
+        ><strong>{{ .Username }}</strong></a
+      >
+      on {{ formatTimestamp .Timestamp }}
+    </p>
     <p>{{ .Content }}</p>
   </li>
   {{ end }}

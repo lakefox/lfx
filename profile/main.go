@@ -59,9 +59,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		comments = append(comments, comment)
 	}
 
-	username, _ = auth.GetUserFromToken(r)
+	user, _ := auth.GetUserFromToken(r)
 
-	layout.RenderPage(w, "profile.html", username, map[string]interface{}{
+	layout.RenderPage(w, "profile.html", user, map[string]interface{}{
 		"Username": username,
 		"Posts":    posts,
 		"Comments": comments,
