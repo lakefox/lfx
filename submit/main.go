@@ -24,7 +24,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		url := r.FormValue("url")
 		text := r.FormValue("text")
 
-		if spam.ContainsBannedWord(title) || spam.ContainsBannedWord(text) {
+		if spam.ContainsBannedWord(title) || spam.ContainsBannedWord(text) || spam.ContainsBannedWord(url) {
 			ipban.Ban(ipban.GetIP(r))
 			http.Redirect(w, r, "/contentpolicy", http.StatusFound)
 			return
